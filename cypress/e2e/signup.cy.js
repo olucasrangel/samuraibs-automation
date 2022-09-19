@@ -32,15 +32,7 @@ describe('cadastro', () => {
     };
 
     before(() => {
-      cy.task('removeUser', user.email).then((result) => {
-        console.log(result);
-      });
-
-      cy.request('POST', 'http://localhost:3333/users', user).then(
-        (response) => {
-          expect(response.status).to.eq(200);
-        }
-      );
+      cy.postUser(user);
     });
     it('não deve cadastrar o usuário', () => {
       signupPages.go();
@@ -102,7 +94,7 @@ describe('cadastro', () => {
     });
 
     alertMessages.forEach((alert) => {
-      it('deve exibir' + alert.toLowerCase(), () => {
+      it('deve exibir ' + alert.toLowerCase(), () => {
         signupPages.alerthaveText(alert);
       });
     });
