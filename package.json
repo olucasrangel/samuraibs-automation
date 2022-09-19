@@ -1,0 +1,22 @@
+{
+  "name": "samuraibs-tests",
+  "version": "1.0.0",
+  "description": "Projeto de testes de aceitação de ponta a ponta em Cypress",
+  "main": "index.js",
+  "author": "Lucas Rangel",
+  "license": "MIT",
+  "scripts": {
+    "test": "npx cypress open --e2e --browser chrome"
+  },
+  "prettier": {
+    "singleQuote": true,
+    "semi": true,
+    "trailingComma": "es5"
+  },
+  "devDependencies": {
+    "@faker-js/faker": "^7.5.0",
+    "cypress": "^10.8.0",
+    "cypress-dark": "^1.8.3",
+    "pg": "^8.8.0"
+  }
+}
